@@ -11,7 +11,10 @@ function App() {
         <div>
             A 页面
 
-            <img src={avtar} style={{ width: 100, height: 100 }} />
+            <div>
+                头像：
+                <img src={avtar} style={{ width: 100, height: 100 }} />
+            </div>
 
             <div>
                 {count}
