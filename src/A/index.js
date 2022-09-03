@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client';
-
-import { avtar } from '../assets'
+import config from './assets/js/appEnvConfig'
 
 function App() {
 
@@ -9,11 +8,10 @@ function App() {
 
     return (
         <div>
-            A 页面
+            hello，friend!
 
             <div>
                 头像：
-                <img src={avtar} style={{ width: 100, height: 100 }} />
             </div>
 
             <div>

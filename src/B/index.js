@@ -2,9 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client';
 
 function App() {
+
     return (
         <div>
-            Page2
+            B页面
         </div>
     )
 }

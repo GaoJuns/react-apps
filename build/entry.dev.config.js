@@ -1,19 +1,64 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const chalk = require("chalk");
 const utils = require('./utils');
 
+// 是否存在此项目
+function hasApp() {
+    const PROJECT_NAME = utils.getProjectName();
+
+    if (PROJECT_NAME) {
+        const projectList = utils.getProjectList();
+
+        if (!projectList.includes(PROJECT_NAME)) {
+            console.log(chalk.yellow(`
+            启动错误！！！！
+
+            ------------------------------------
+
+            错误信息：不存在 ${PROJECT_NAME} 项目
+
+            ------------------------------------
+            `))
+            process.exit();
+        }
+        return PROJECT_NAME;
+    }
+    return null;
+}
+
+// 打印启动项目
+function log(appName) {
+    console.log(chalk.green(`
+    正在启动！！！！
+
+    ------------------------------------
+
+    启动项目： ${appName || '全部'} 项目
+
+    ------------------------------------
+    `));
+}
 
 // 获取需要打包的文件入口
 function getBuildEntry() {
-    const projectList = utils.getProjectList();
+    const entry = {};
+    const appName = hasApp();
 
-    let entry = {};
-    for (let index in projectList) {
-        const PROJECT_NAME = projectList[index]
-        entry[PROJECT_NAME] = `./src/${PROJECT_NAME}/index.js`
+    if (appName) {
+        entry[appName] = `./src/${appName}/index.js`
+        log(appName);
+    } else {
+        const projectList = utils.getProjectList();
+
+        for (let index in projectList) {
+            const PROJECT_NAME = projectList[index]
+            entry[PROJECT_NAME] = `./src/${PROJECT_NAME}/index.js`
+        }
+        log();
     }
+
     return entry
 }
-
 
 // 获取htmlwebpackplugin列表
 function getHtmlWebpackPluginList(options = {}) {
@@ -26,21 +71,41 @@ function getHtmlWebpackPluginList(options = {}) {
         },
     }
 
-    const projectList = utils.getProjectList();
+    const appName = hasApp();
     const HtmlWebpackPluginList = [];
-    for (let index in projectList) {
-        const PROJECT_NAME = projectList[index];
+
+    if (appName) {
+
         const HtmlWebpackPluginOptions = {
-            filename: utils.resolve('./../dist/' + PROJECT_NAME + '/index.html'),
+            filename: utils.resolve('./../dist/index.html'),
             template: utils.resolve("./../public/index.html"),
             favicon: utils.resolve('./../public/favicon.ico'),
             inject: true,
-            chunks: [PROJECT_NAME],
+            chunks: [appName],
         };
+
         if (options.extract) {
             HtmlWebpackPluginOptions = Object.assign(HtmlWebpackPluginOptions, extractOptions)
         }
+
         HtmlWebpackPluginList.push(new HtmlWebpackPlugin(HtmlWebpackPluginOptions))
+    } else {
+        const projectList = utils.getProjectList();
+
+        for (let index in projectList) {
+            const PROJECT_NAME = projectList[index];
+            const HtmlWebpackPluginOptions = {
+                filename: utils.resolve('./../dist/' + PROJECT_NAME + '/index.html'),
+                template: utils.resolve("./../public/index.html"),
+                favicon: utils.resolve('./../public/favicon.ico'),
+                inject: true,
+                chunks: [PROJECT_NAME],
+            };
+            if (options.extract) {
+                HtmlWebpackPluginOptions = Object.assign(HtmlWebpackPluginOptions, extractOptions)
+            }
+            HtmlWebpackPluginList.push(new HtmlWebpackPlugin(HtmlWebpackPluginOptions))
+        }
     }
 
     return HtmlWebpackPluginList;

@@ -11,7 +11,7 @@ function assetsPath(_path) {
 }
 
 function getProjectName() {
-    return process.env.npm_config_name
+    return process.env.npm_config_appName
 }
 
 function needAnalyzer() {
