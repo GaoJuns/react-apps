@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/eslint-parser": "^7.5.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/plugin-transform-runtime": "^7.5.5",
@@ -25,6 +26,16 @@
     "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^3.6.0",
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-react": "^7.31.4",
+    "eslint-webpack-plugin": "^3.2.0",
     "file-loader": "^6.2.0",
     "html-webpack-externals-plugin": "^3.8.0",
     "html-webpack-plugin": "^4.5.2",
@@ -35,6 +46,7 @@
     "ora": "^4.0.2",
     "postcss": "^8.4.14",
     "postcss-loader": "^3.0.0",
+    "prettier": "^2.7.1",
     "style-loader": "^2.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^4.1.1",
@@ -46,11 +58,13 @@
   },
   "scripts": {
     "create": "cross-env NODE_ENV=development node build/create.config.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --config build/webpack.dev.config.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --progress --config build/webpack.dev.config.js",
     "build": "cross-env NODE_ENV=production node build/build.js",
     "build:test": "cross-env NODE_ENV=test node build/build.js"
   },
-  "keywords": ["react-apps"],
+  "keywords": [
+    "react-apps"
+  ],
   "author": "_jun",
   "license": "ISC"
 }

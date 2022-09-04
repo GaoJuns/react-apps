@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-function App() {
+import Test from './test';
 
+function App() {
     return (
-        <div>
-            B页面
+        <div className="test">
+            <Test />
         </div>
-    )
+    );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('app'));

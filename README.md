@@ -10,7 +10,7 @@ react 多应用打包模板，适用于开发营销活动H5页面等的项目。
 ## 三、运行
 ```js
     1. npm install
-    2. npm run dev [--appName=xxx(src下项目名)]--设置运行指定项目，不设置运行全部项目
+    2. npm run start [--appName=xxx(src下项目名)]--设置运行指定项目，不设置运行全部项目
     3. localhost:8080 或 localhost:8080/xxx(src下项目名)
 ```
 
