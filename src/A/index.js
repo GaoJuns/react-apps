@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom/client';
 import 'lib-flexible';
-import 'antd-mobile/es/global';
+import '@antd2x/es/global';
 
 import Home from './views/home';
 

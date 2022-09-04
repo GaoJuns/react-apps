@@ -46,6 +46,11 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json', '.jpg'],
         alias: {
             '@': path.join(__dirname, '..', 'src'),
+            '@antd2x': path.join(
+                __dirname,
+                '..',
+                'node_modules/antd-mobile/2x'
+            ),
         },
     },
 
