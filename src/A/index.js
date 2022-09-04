@@ -1,17 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
+import 'normalize.css';
 import 'lib-flexible';
 import '@antd2x/es/global';
 
-import Home from './views/home';
-
-function App() {
-    return (
-        <Fragment>
-            <Home />
-        </Fragment>
-    );
-}
+import App from './views/App';
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(<App />);

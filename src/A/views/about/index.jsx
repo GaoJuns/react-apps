@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './style.css';
 
-function Home() {
+function About() {
     return (
-        <section className="home">
-            <h2>Hi,Friend!</h2>
+        <section className="about">
+            <h2>Hello,World!</h2>
+
             <nav>
                 <Link to="/">Friend</Link>
                 <Link to="/about">World</Link>
@@ -14,4 +14,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default About;
