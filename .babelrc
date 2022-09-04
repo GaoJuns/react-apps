@@ -3,7 +3,9 @@
     ["@babel/preset-env", {
       "modules": false,
       "targets": {
-        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"],
+        "chrome": "49",
+        "ios": "10"
       }
     }],
     "@babel/preset-react"
@@ -14,9 +16,9 @@
       "useBuildIns":"usage"
     }],
     ["import", {
-      "libraryName": "antd",
-      "libraryDirectory": "es",
-      "style": "css"
+      "libraryName": "antd-mobile",
+      "libraryDirectory": "es/components",
+      "style": false
     }],
     "react-html-attrs",
     ["@babel/plugin-proposal-decorators",{"legacy": true}],

@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom/client';
+import 'lib-flexible';
+import 'antd-mobile/es/global';
+
+import Home from './views/home';
 
 function App() {
-
-
     return (
-        <div>
-            Hi，Friend!
-        </div>
-    )
+        <Fragment>
+            <Home />
+        </Fragment>
+    );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('app'));

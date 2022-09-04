@@ -1,26 +1,16 @@
-import React, { useState } from 'react'
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom/client';
-import config from './assets/js/appEnvConfig'
+import 'lib-flexible';
+import 'antd-mobile/es/global';
+
+import Home from './views/home';
 
 function App() {
-
-    const [count, setCount] = useState(0)
-
     return (
-        <div>
-            hello，friend!
-
-            <div>
-                头像：
-            </div>
-
-            <div>
-                {count}
-            </div>
-
-            <button onClick={() => setCount(count + 1)}>+</button>
-        </div>
-    )
+        <Fragment>
+            <Home />
+        </Fragment>
+    );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
