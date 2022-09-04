@@ -2,8 +2,12 @@
 
 react 多应用打包模板，适用于开发营销活动H5页面等的项目。
 
+## 二、创建
+```js
+    npm run create --appName=xxx(src下项目名)
+```
 
-## 二、运行
+## 三、运行
 ```js
     1. npm install
     2. npm run dev [--appName=xxx(src下项目名)]--设置运行指定项目，不设置运行全部项目
@@ -11,7 +15,7 @@ react 多应用打包模板，适用于开发营销活动H5页面等的项目。
 ```
 
 
-## 三、构建
+## 四、构建
 ```js
     测试环境：
     npm run build:test --appName=xxx(src下项目名)
