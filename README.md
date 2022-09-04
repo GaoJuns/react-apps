@@ -27,3 +27,7 @@ react 多应用打包模板，适用于开发营销活动H5页面等的项目。
     npm run build --appName=xxx(src下项目名) --report
 ```
 
+## 五、注意
+
+ - **node版本:** v14.17.6
+ - **src** 下项目目录中必须存在 **index.html** 与 **favicon.ico** 文件，否则构建会失败。
