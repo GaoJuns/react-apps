@@ -2,6 +2,7 @@ const webpackMerge = require('webpack-merge');
 const utils = require('./utils');
 const entryConfig = require('./entry.dev.config');
 const baseWebpackConfig = require('./webpack.base.config');
+const PROJECT_NAME = utils.getProjectName();
 
 module.exports = webpackMerge.merge(baseWebpackConfig, {
     mode: 'development',
@@ -21,7 +22,11 @@ module.exports = webpackMerge.merge(baseWebpackConfig, {
         hot: true,
         open: true,
         compress: false,
-        historyApiFallback: true,
+        historyApiFallback: PROJECT_NAME
+            ? true
+            : {
+                rewrites: entryConfig.getRewritesList(),
+            },
         proxy: {
             // 接口请求代理
         },

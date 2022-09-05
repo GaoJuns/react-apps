@@ -7,8 +7,8 @@ function About() {
             <h2>Hello,World!</h2>
 
             <nav>
-                <Link to="/">Friend</Link>
-                <Link to="/about">World</Link>
+                <Link to="/A">Friend</Link>
+                <Link to="/A/about">World</Link>
             </nav>
         </section>
     );

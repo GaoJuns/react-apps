@@ -33,4 +33,9 @@ module.exports = {
         'react/prefer-stateless-function': 0,
     },
     parser: '@babel/eslint-parser',
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
 };
