@@ -1,19 +1,17 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from './home';
+import Friend from './home';
 import About from './about';
 import NotFound from './NotFound';
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/A">
             <Routes>
-                <Route index element={<Home />} />
-                <Route path="/A" element={<Home />} />
-                <Route path="/A/about" element={<About />} />
-                <Route path="/A/404" element={<NotFound />} />
-                <Route path="*" element={<Navigate to="/A/404" />} />
+                <Route path="/" element={<Friend />} />
+                <Route path="/about" element={<About />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
     );

@@ -1,8 +1,9 @@
 const webpackMerge = require('webpack-merge');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const utils = require('./utils');
 const entryConfig = require('./entry.dev.config');
 const baseWebpackConfig = require('./webpack.base.config');
-const PROJECT_NAME = utils.getProjectName();
+const appName = utils.getProjectName();
 
 module.exports = webpackMerge.merge(baseWebpackConfig, {
     mode: 'development',
@@ -15,14 +16,35 @@ module.exports = webpackMerge.merge(baseWebpackConfig, {
     module: {
         rules: utils.cssLoaders(),
     },
-    plugins: [...entryConfig.getHtmlWebpackPluginList()],
+    plugins: [
+        ...entryConfig.getHtmlWebpackPluginList(),
+        new FriendlyErrorsWebpackPlugin({
+            compilationSuccessInfo: {
+                messages: [
+                    'You application is running here http://localhost:8080',
+                ],
+                notes: [
+                    'Some additionnal notes to be displayed unpon successful compilation',
+                ],
+            },
+            clearConsole: true,
+        }),
+    ],
     devtool: '#eval-source-map',
+    stats: 'errors-only',
     devServer: {
         port: '8080',
         hot: true,
-        open: true,
+        open: appName ? ['/' + appName] : false,
         compress: false,
-        historyApiFallback: PROJECT_NAME
+        client: {
+            overlay: {
+                errors: true,
+                warnings: false,
+            },
+            progress: true,
+        },
+        historyApiFallback: appName
             ? true
             : {
                 rewrites: entryConfig.getRewritesList(),

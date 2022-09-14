@@ -2,6 +2,7 @@ const path = require('path');
 const Webpack = require('webpack');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const utils = require('./utils');
+const APP_NAME = utils.getProjectName() || '';
 const NODE_ENV_VALUE = process.env.NODE_ENV;
 
 module.exports = {
@@ -58,6 +59,7 @@ module.exports = {
         new Webpack.DefinePlugin({
             'process.env': {
                 APP_ENV: JSON.stringify(NODE_ENV_VALUE),
+                APP_NAME: JSON.stringify(APP_NAME),
             },
         }),
         new ESLintPlugin(),

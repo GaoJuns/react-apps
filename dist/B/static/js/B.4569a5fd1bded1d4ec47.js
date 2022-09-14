@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{3:function(e,n,t){"use strict";t.r(n);var n=t(0),a=t.n(n),n=t(2);function r(){return a.a.createElement("div",null,"Page2")}t.n(n).a.createRoot(document.getElementById("app")).render(a.a.createElement(r,null))}},[[3,1,2]]]);

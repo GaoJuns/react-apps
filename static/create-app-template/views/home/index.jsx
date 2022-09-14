@@ -1,13 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './style.css';
 
 function Home() {
     return (
-        <section className="container">
+        <section className="home">
             <h2>Hi,Friend!</h2>
             <nav>
-                <NavLink to="/B/home">Friend</NavLink>
-                <NavLink to="/B/about">World</NavLink>
+                <Link to="/">Friend</Link>
+                <Link to="/about">World</Link>
             </nav>
         </section>
     );

@@ -8,11 +8,20 @@ react 多应用打包模板，适用于开发营销活动H5页面等的项目。
 ```
 
 ## 三、运行
+- **1.运行指定项目：**
 ```js
     1. npm install
-    2. npm run start [--appName=xxx(src下项目名)]--设置运行指定项目，不设置运行全部项目
-    3. localhost:8080 或 localhost:8080/xxx(src下项目名)
+    2. npm start --appName=xxx(src下项目名)
+    3. localhost:8080
 ```
+
+- **2.运行所有项目：**
+```js
+    1. npm install
+    2. npm start
+    3. localhost:8080/xxx(src下项目名)
+```
+> 如果页面404，请在路由 BrowserRouter 设置 basename='/xxx(src下项目名)'
 
 
 ## 四、构建
@@ -29,5 +38,5 @@ react 多应用打包模板，适用于开发营销活动H5页面等的项目。
 
 ## 五、注意
 
- - **node版本:** v14.17.6
+ - **node版本:** v14.17.x。
  - **src** 下项目目录中必须存在 **index.html** 与 **favicon.ico** 文件，否则构建会失败。

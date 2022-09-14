@@ -7,8 +7,8 @@ function Home() {
         <section className="home">
             <h2>Hi,Friend!</h2>
             <nav>
-                <Link to="/A">Friend</Link>
-                <Link to="/A/about">World</Link>
+                <Link to="/">Friend</Link>
+                <Link to="/about">World</Link>
             </nav>
         </section>
     );

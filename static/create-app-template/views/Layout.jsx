@@ -1,17 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
-function About() {
+function App() {
     return (
-        <section className="about">
-            <h2>Hello,World!</h2>
-
+        <section className="layout">
             <nav>
                 <Link to="/">Friend</Link>
                 <Link to="/about">World</Link>
             </nav>
+            <Outlet />
         </section>
     );
 }
 
-export default About;
+export default App;

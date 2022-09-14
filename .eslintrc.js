@@ -6,6 +6,11 @@ module.exports = {
         node: true,
     },
     extends: ['eslint:recommended', 'plugin:react/recommended'],
+    settings: {
+        react: {
+            version: '999.999.999',
+        },
+    },
     parserOptions: {
         ecmaFeatures: {
             arrowFunctions: true,
@@ -33,9 +38,4 @@ module.exports = {
         'react/prefer-stateless-function': 0,
     },
     parser: '@babel/eslint-parser',
-    settings: {
-        react: {
-            version: 'detect',
-        },
-    },
 };
