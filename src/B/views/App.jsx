@@ -9,7 +9,7 @@ const APP_NAME = '/' + process.env.APP_NAME;
 
 function App() {
     return (
-        <BrowserRouter basename="/B">
+        <BrowserRouter basename={APP_NAME}>
             <Routes>
                 <Route path="/" element={<Friend />} />
                 <Route path="/about" element={<About />} />

@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client';
 import 'normalize.css';
 import 'lib-flexible';
 import '@antd2x/es/global';
+import './style.css';
 
-import App from './views/App';
+import Route from './views/router';
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
-root.render(<App />);
+root.render(<Route />);

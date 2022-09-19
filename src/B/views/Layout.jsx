@@ -4,11 +4,12 @@ import { Link, Outlet } from 'react-router-dom';
 function App() {
     return (
         <section className="layout">
+            <Outlet />
             <nav>
                 <Link to="/">Friend</Link>
-                <Link to="/about">World</Link>
+                <Link to="/world">World</Link>
+                <Link to="/details">Details</Link>
             </nav>
-            <Outlet />
         </section>
     );
 }
